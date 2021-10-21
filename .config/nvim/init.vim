@@ -24,10 +24,13 @@ Plug 'airblade/vim-gitgutter'
 
 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'sheerun/vim-polyglot' "Better syntax highlighting with one dark
-"Plug 'pangloss/vim-javascript'
-"Plug 'mxw/vim-jsx'
+"Plug 'sheerun/vim-polyglot' "Better syntax highlighting with one dark
+Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
+Plug 'othree/html5.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 "Plug 'HerringtonDarkholme/yats.vim'
+"Plug 'mxw/vim-jsx' "DEPRECTED
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'alvan/vim-closetag'
@@ -45,8 +48,8 @@ Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 filetype plugin on
 
-colorscheme onedark
-set background=dark
+colorscheme gruvbox
+"set background=dark
 
 set encoding=UTF-8
 
