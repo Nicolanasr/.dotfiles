@@ -90,7 +90,11 @@ plugins=(
   npm 
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+	vi-mode
 )
+
+#for vi-mode
+VI_MODE_SET_CURSOR=true
 
 source $ZSH/oh-my-zsh.sh
 
