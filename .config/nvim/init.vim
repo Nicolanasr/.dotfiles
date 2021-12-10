@@ -23,12 +23,16 @@ Plug 'ap/vim-css-color'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 
+Plug 'tpope/vim-surround'
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'sheerun/vim-polyglot' "Better syntax highlighting with one dark
@@ -52,6 +56,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'kyazdani42/nvim-web-devicons'
 "Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'unblevable/quick-scope'
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Treesitter
@@ -63,7 +69,7 @@ call plug#end()
 filetype plugin on
 
 colorscheme gruvbox
-"set background=dark
+set background=dark
 
 set encoding=UTF-8
 
@@ -74,6 +80,7 @@ set shiftround
 set hlsearch
 set ignorecase
 set incsearch
+set nowrap
 set nolazyredraw 
 set smartcase
 set belloff=all
@@ -93,6 +100,7 @@ set laststatus=2 " Always display the status bar.
 set smarttab
 set shiftwidth=2
 set tabstop=2
+set hidden
 set wildmenu
 set ruler
 set linebreak " Word wrap but don't cut words
@@ -104,14 +112,21 @@ set autoindent
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
 
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 let g:highlightedyank_highlight_duration = 200
+
 
 inoremap jk <ESC>
 inoremap kj <ESC>
 
 " create new line without going into insert mode 
-nmap o o<Esc>
-nmap O O<Esc>
+"nmap o o<Esc>
+"nmap O O<Esc>
+
+"" Paste replace visual selection without copying it
+vnoremap <leader>p "_dP
 
 "Mapping to exit :terminal mode
 tnoremap <Esc> <C-\><C-n>
@@ -154,6 +169,10 @@ nmap <F2> <Plug>(coc-rename)
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" These are the file extensions where vim-closetag plugin is enabled.
+let g:closetag_filenames = '*.html, *.js, *.jsx'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
 
 let g:coc_global_extensions = [
   \ 'coc-snippets',
