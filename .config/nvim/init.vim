@@ -12,8 +12,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 
+"Plug 'wakatime/vim-wakatime'"
+
 Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
 "Plug 'itchyny/lightline.vim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-lua/lsp-status.nvim' " Used by other plugin for basic lsp info
@@ -23,16 +25,18 @@ Plug 'ap/vim-css-color'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 
-Plug 'tpope/vim-surround'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
+Plug 'tpope/vim-surround'
+Plug 'mbbill/undotree'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'sheerun/vim-polyglot' "Better syntax highlighting with one dark
@@ -133,6 +137,8 @@ tnoremap <Esc> <C-\><C-n>
 
 " Clear search highlight
 nnoremap <Leader>c :noh<return><esc>
+
+nnoremap <Leader>uu :UndotreeToggle<CR>
 
 nmap <C-b> :NERDTreeToggle<CR>
 nmap <C-_>   <Plug>NERDCommenterToggle
